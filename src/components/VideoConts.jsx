@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
+import Videos from './Videos'
 import { useParams } from 'react-router-dom'
 import { fetchAPI } from '../utils/fetchAPI'
 
@@ -38,7 +39,7 @@ const VideoConts = () => {
             <div className="videoTit"></div>
           </div>
           <div className="right slide">
-            <Videos videos={videos} />
+            <Videos videos={videos} layout="column" />
           </div>
         </div>
       </div>

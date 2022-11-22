@@ -130,9 +130,14 @@
     .right {
       width: 30%;
       height: 800px;
-      background: #444;
+      // background: #444;
 
       &.slide {
+        .videos__inner {
+          .box {
+            width: 100%;
+          }
+        }
       }
     }
   }
