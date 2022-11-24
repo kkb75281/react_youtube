@@ -24,3 +24,7 @@ npm i node-sass
 
 npm install react-icons --save
 https://react-icons.github.io/react-icons
+
+## react_youtube 바로가기
+
+https://gyupp-react-youtube.netlify.app
