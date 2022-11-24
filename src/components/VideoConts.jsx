@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
-import Videos from './Videos'
-import { useParams } from 'react-router-dom'
+import { Videos, Loader } from './'
+import { useParams, Link } from 'react-router-dom'
 import { fetchAPI } from '../utils/fetchAPI'
+import { SlLike } from 'react-icons/sl'
 
 const VideoConts = () => {
   const [videoDetail, setVideoDetail] = useState(null)
@@ -20,10 +21,13 @@ const VideoConts = () => {
     )
   }, [id])
 
-  // const {
-  //   snippet: { title, channelId, channelTitle },
-  //   statistics: { viewCount, likeCount },
-  // } = videoDetail
+  if (!videoDetail?.snippet) return <Loader />
+
+  // {videoDetail.snippet?.title}
+  const {
+    snippet: { title, channelId, channelTitle },
+    statistics: { viewCount, likeCount },
+  } = videoDetail
 
   return (
     <section className="videoConts">
@@ -36,9 +40,21 @@ const VideoConts = () => {
                 controls
               />
             </div>
-            <div className="videoTit"></div>
+            <div className="desc">
+              <span className="title">{title}</span>
+              <div className="channel">
+                <Link to={`/channel/${channelId}`}>{channelTitle}</Link>
+              </div>
+              <div className="count">
+                <span className="view">조회수 :{viewCount}</span>
+                <span className="like">
+                  <SlLike className="icon" />
+                  {likeCount}
+                </span>
+              </div>
+            </div>
           </div>
-          <div className="right slide">
+          <div className="right side">
             <Videos videos={videos} layout="column" />
           </div>
         </div>

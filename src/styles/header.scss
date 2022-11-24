@@ -9,6 +9,7 @@
   top: 0;
   width: 100%;
   background: #000;
+  z-index: 99999;
 
   .logo {
     width: 20%;
@@ -44,6 +45,16 @@
   }
 }
 
+@media (max-width: 960px) {
+  #header {
+    .logo {
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
 @media (max-width: 800px) {
   #header {
     flex-direction: column;
@@ -53,6 +64,10 @@
       width: 100%;
       padding-top: 5px;
       border-right: 0;
+
+      span {
+        display: inline-block;
+      }
     }
     .search {
       width: 100%;
