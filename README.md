@@ -22,7 +22,7 @@ npm i node-sass
 
 ## react icon 설치
 
-npm install react-icons --save
+npm install react-icons --save<br />
 https://react-icons.github.io/react-icons
 
 ## react_youtube 바로가기
