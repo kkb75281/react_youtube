@@ -3,10 +3,9 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { fetchAPI } from '../utils/fetchAPI'
-import { Category, Videos } from './'
+import { Videos } from './'
 
 const SearchConts = () => {
-  const [selectCategory, setSelectCategory] = useState('')
   const [videos, setVideos] = useState(null)
   const { searchTerm } = useParams()
 
